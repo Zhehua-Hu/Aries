@@ -12,5 +12,21 @@
     python updateGit.py [-m "your comment"]
     ```
 
+* nameCheck.py
+    - 简介：
+    文件名规范检查工具
+
+    - 使用：
+    ```
+
+    ```
 
 
+* markdownUpdateYml.py
+    - 简介：
+    将更改后markdown加入Yml头
+
+    - 使用：
+    ```
+
+    ```
