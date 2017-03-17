@@ -9,18 +9,30 @@
 
     - 使用：
     ```
+    # 基础用法
     python updateGit.py [-m "your comment"]
+    
+    # commit所有项目
+    
     ```
 
 * nameCheck.py
     - 简介：
-    文件名规范检查工具
+    输出博客路径下所有的markdown文件，人工查看
 
     - 使用：
     ```
-
+    python nameCheck.py <blog folder[Must be jekyll+Github Page!]>
     ```
 
+* exportPermalink.py
+    - 简介：
+    导出博客路径下所有的博文的Permalink
+
+    - 使用：
+    ```
+    python exportPermalink.py <blog folder[Must be jekyll+Github Page!]> -o outputfilename
+    ```
 
 * markdownUpdateYml.py
     - 简介：
