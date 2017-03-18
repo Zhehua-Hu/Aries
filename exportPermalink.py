@@ -6,7 +6,11 @@ import argparse
 import os
 import datetime
 import yaml
+import sys
 
+
+blog_foldername = "blog_workbench"
+home_url_var = "{{site.zhehua.home}}/"
 yfile = {"last modified": datetime.date.today(),
 		"Permalink": [{"Category":"Paper"}]}
 
@@ -40,8 +44,8 @@ def exportPermalink(path_arg, output_name="paper_list.yaml"):
 	path = os.path.join(make_perfect_path(path_arg), "_posts")
 	file_names, ret_cnt = getContainedFiles(path, type="Recursive")
 
-	current_folder = os.path.dirname(__file__)
-	filename = os.path.join(current_folder, "blog_workbench/" + output_name)
+	current_folder = os.path.dirname(os.path.abspath(sys.argv[0]))
+	filename = os.path.join(current_folder, os.path.join(blog_foldername, output_name))
 	with open(filename, "w+") as f:
 		for item in file_names:
 			title_whole = os.path.basename(item)
@@ -49,15 +53,19 @@ def exportPermalink(path_arg, output_name="paper_list.yaml"):
 
 			date_str = title_whole[:10].replace("-","/")
 			title_str = title_whole[11:][:-3] + ".html"
-			integrated_str = "{{site.zhehua.home}}/" + date_str + "/" + title_str
+			integrated_str = home_url_var + date_str + "/" + title_str
 
 			yfile["Permalink"].append({folder:integrated_str})
 		yaml.dump(yfile, f)
 
 if __name__ == "__main__":
-	# parser = argparse.ArgumentParser()
-	# parser.add_argument("path_arg", help="blog folder[Must be jekyll+Github Page!]", type=str)
-	# args = parser.parse_args()
-	# exportPermalink(args.path_arg)
+	parser = argparse.ArgumentParser()
+	parser.add_argument("path_arg", help="blog folder[Must be jekyll+Github Page!]", type=str)
+	parser.add_argument("--output", "-o", help="output filename", type=str)
+	args = parser.parse_args()
 
-	exportPermalink(r"C:\A_Blog\Zhehua-Hu.github.io")
+	output_name = "paper_list.yaml"
+	if args.output:
+		output_name = args.output
+	exportPermalink(args.path_arg, output_name)
+
