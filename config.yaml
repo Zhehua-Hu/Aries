@@ -1,0 +1,19 @@
+BlogPath:
+  win: C:\A_Blog\Zhehua-Hu.github.io
+  linux: /home/zhehua/Zhehua-Hu.github.io
+  Mac: null
+
+BlogDefine:
+  blog_workbench: blog_workbench
+  home_url: '{{site.zhehua.home}}'
+  paper_list: paper_list.yaml
+
+GithubPath:
+  win: H:\Clouds\Github
+  linux: /home/zhehua/Github
+  Mac: null
+
+GithubDefine:
+  github_workbench: github_workbench
+  home_url: '{{site.zhehua.github}}'
+  project_list: project_list.yaml
