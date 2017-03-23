@@ -8,8 +8,7 @@ import yaml
 import pprint
 import platform
 
-from blog_tools.export_permalink import *
-from blog_tools.name_check import *
+from github_tools.export_git_project_and_permalink import *
 
 
 config_file = "config.yaml"
@@ -17,19 +16,18 @@ with open(config_file, "r+") as rf:
     config_yaml = yaml.load(rf)
 
     if "Windows" in platform.system():
-        folder_blog = config_yaml['BlogPath']['win']
+        github_path = config_yaml['GithubPath']['win']
     else:
-        folder_blog = config_yaml['BlogPath']['linux']
+        github_path = config_yaml['GithubPath']['linux']
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--list", "-l", action='store_true', help="Show All Papers")
     args = parser.parse_args()
 
-    export_permalink(folder_blog)
+    export_git_project_and_permalink(github_path)
 
-    if args.list:
-        nameCheck(folder_blog)
+
+
 
 
 

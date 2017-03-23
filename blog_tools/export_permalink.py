@@ -23,8 +23,8 @@ home_url = config_yaml["BlogDefine"]["home_url"]
 paper_list = config_yaml["BlogDefine"]["paper_list"]
 blog_foldername = config_yaml["BlogDefine"]["blog_workbench"]
 
-output_yaml = {"last modified": datetime.date.today(), "Blog": [
-    {"Category": "PaperPermalink"}]}
+output_yaml = {"last modified": datetime.date.today(),
+               "Blog": [{"Category": "PaperPermalink"}]}
 
 
 def make_perfect_path(path):
@@ -36,32 +36,13 @@ def make_perfect_path(path):
     return path
 
 
-def getContainedFiles(folder, type="NotRecursive"):
-    file_names = []
-    ret_cnt = 0
-
-    for root, dirs, filenames in os.walk(folder):
-        if type == "Recursive":
-            for filename in filenames:
-                if not filename.startswith("."):  # not hiden file
-                    file_names.append(os.path.join(root, filename))
-                    ret_cnt += 1
-        else:
-            for item in filenames:
-                if not item.startswith("."):  # not hiden file
-                    file_names.append(os.path.join(root, item))
-            ret_cnt = len(file_names)
-            break
-    return file_names, ret_cnt
-
-
-def exportPermalink(path_arg, output_name="paper_list.yaml"):
+def export_permalink(path_arg, output_name="paper_list.yaml"):
     path = os.path.join(make_perfect_path(path_arg), "_posts")
     file_names = FileList(path, search_type="Recursive").get_files_path_list()
-    _yaml_path = os.path.join(project_folder,
+    yaml_path = os.path.join(project_folder,
                               os.path.join(blog_foldername, output_name))
 
-    with open(_yaml_path, "w+") as f:
+    with open(yaml_path, "w+") as f:
         for item in file_names:
             title_name = os.path.basename(item)
             folder_name = os.path.basename(os.path.dirname(item))
@@ -83,6 +64,6 @@ if __name__ == "__main__":
 
     if args.output:
         paper_list = args.output
-    exportPermalink(args.path_arg, paper_list)
+    export_permalink(args.path_arg, paper_list)
 
     # exportPermalink(r"/home/zhehua/Zhehua-Hu.github.io")
