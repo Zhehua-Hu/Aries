@@ -14,12 +14,12 @@ from blog_tools.name_check import *
 
 config_file = "config.yaml"
 with open(config_file, "r+") as rf:
-	config_yaml = yaml.load(rf)
+    config_yaml = yaml.load(rf)
 
-	if "Windows" in platform.system():
-		folder_blog = config_yaml['BlogPath']['win']
-	else:
-		folder_blog = config_yaml['BlogPath']['linux']
+    if "Windows" in platform.system():
+        folder_blog = config_yaml['BlogPath']['win']
+    else:
+        folder_blog = config_yaml['BlogPath']['linux']
 
 
 
@@ -28,14 +28,14 @@ with open(config_file, "r+") as rf:
 
 if __name__ == "__main__":
 
-	parser = argparse.ArgumentParser()
-	parser.add_argument("--list", "-l", action='store_true', help="Show All Papers")
-	args = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--list", "-l", action='store_true', help="Show All Papers")
+    args = parser.parse_args()
 
-	exportPermalink(folder_blog)
+    exportPermalink(folder_blog)
 
-	if args.list:
-		nameCheck(folder_blog)
+    if args.list:
+        nameCheck(folder_blog)
 
 
 
