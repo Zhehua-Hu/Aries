@@ -25,7 +25,7 @@ blog_foldername = config_yaml["GithubDefine"]["github_workbench"]
 
 output_yaml = {"last modified": datetime.date.today(),
                "GithubProject": [],
-               "Permalinks":[{"Project": "Permalink"}]}
+               "Permalinks": [{"Project": "Permalink"}]}
 
 
 def make_perfect_path(path):
@@ -61,13 +61,13 @@ def export_git_project_and_permalink(path_arg, output_name="project_list.yaml"):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("path_arg", help="blog folder[Must be jekyll+Github Page!]", type=str)
-    parser.add_argument("--output", "-o", help="output filename", type=str)
-    args = parser.parse_args()
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("path_arg", help="blog folder[Must be jekyll+Github Page!]", type=str)
+    # parser.add_argument("--output", "-o", help="output filename", type=str)
+    # args = parser.parse_args()
+    #
+    # if args.output:
+    #     paper_list = args.output
+    # export_git_project_and_permalink(args.path_arg, paper_list)
 
-    if args.output:
-        paper_list = args.output
-    export_git_project_and_permalink(args.path_arg, paper_list)
-
-    # export_git_project_and_permalink(r"/home/zhehua/Github")
+    export_git_project_and_permalink(r"/home/zhehua/Github")

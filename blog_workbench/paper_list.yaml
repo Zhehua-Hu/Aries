@@ -9,6 +9,7 @@ Blog:
 - {Engineering: '{{site.zhehua.home}}/2015/06/06/UcenterModifyGPS.html'}
 - {Engineering: '{{site.zhehua.home}}/2015/06/07/UbuntuDevelopGPS.html'}
 - {Engineering: '{{site.zhehua.home}}/2016/11/02/Ping-Traceroute.html'}
+- {Engineering: '{{site.zhehua.home}}/2016/12/02/Caffe-Install-And-Config.html'}
 - {Engineering: '{{site.zhehua.home}}/2017/03/11/NvidiaEmbeddedDevicesConfig.html'}
 - {Engineering: '{{site.zhehua.home}}/2017/03/15/MakeApi.html'}
 - {Engineering: '{{site.zhehua.home}}/2017/03/16/Ubuntu-flask-webservice.html'}
@@ -16,7 +17,9 @@ Blog:
 - {Engineering: '{{site.zhehua.home}}/2017/03/18/Nginx.html'}
 - {Learning: '{{site.zhehua.home}}/2014/07/01/LinuxAndTheUnixPhilosophy.html'}
 - {Learning: '{{site.zhehua.home}}/2015/12/02/Read-And-Review-A-Book.html'}
+- {LightShare: '{{site.zhehua.home}}/2016/03/11/What-my-mother-taught-me-about-computer-vision-ChineseVersion.html'}
 - {LightShare: '{{site.zhehua.home}}/2016/03/21/OpenCVorMatlab.html'}
+- {LightShare: '{{site.zhehua.home}}/2016/03/23/DeepLearning-VS-SLAM-ChineseVersion..html'}
 - {LightShare: '{{site.zhehua.home}}/2016/08/01/SougouTrick.html'}
 - {LightShare: '{{site.zhehua.home}}/2016/08/16/NutStoreCLoud.html'}
 - {LightShare: '{{site.zhehua.home}}/2016/09/10/DeepLearningJokes.html'}
@@ -56,4 +59,4 @@ Blog:
 - {Toolchain: '{{site.zhehua.home}}/2017/01/01/EffectiveWindows.html'}
 - {Toolchain: '{{site.zhehua.home}}/2017/01/01/LinuxCommandLine.html'}
 - {Toolchain: '{{site.zhehua.home}}/2017/03/07/PyQt.html'}
-last modified: 2017-03-23
+last modified: 2017-03-24

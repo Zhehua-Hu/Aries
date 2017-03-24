@@ -7,7 +7,7 @@ import os
 import datetime
 
 
-def update_git(comment=None):
+def update_git(comment=(datetime.datetime.now().__str__())):
     command = "git add *"
     os.system(command)
     print("------> %s" % command)
