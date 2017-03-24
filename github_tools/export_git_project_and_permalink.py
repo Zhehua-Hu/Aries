@@ -23,8 +23,9 @@ home_url = config_yaml["GithubDefine"]["home_url"]
 paper_list = config_yaml["GithubDefine"]["project_list"]
 blog_foldername = config_yaml["GithubDefine"]["github_workbench"]
 
-output_yaml = {"last modified": datetime.date.today(), "GithubProject": [
-                {"Project": "Permalink"}]}
+output_yaml = {"last modified": datetime.date.today(),
+               "GithubProject": [],
+               "Permalinks":[{"Project": "Permalink"}]}
 
 
 def make_perfect_path(path):
@@ -51,7 +52,9 @@ def export_git_project_and_permalink(path_arg, output_name="project_list.yaml"):
     with open(yaml_path, "w+") as wf:
         for item in file_names:
             title_name = os.path.basename(item)
-            output_yaml["GithubProject"].append({item: os.path.join(home_url, title_name)})
+            output_yaml["GithubProject"].append({title_name:item})
+            output_yaml["Permalinks"].append({title_name: "https://github.com/Zhehua-Hu/"+title_name+".git"})
+            output_yaml["Permalinks"].append({title_name: "git@github.com:Zhehua-Hu/"+title_name+".git"})
 
         yaml.dump(output_yaml, wf)
     print("GithubProject of \"%s\" have been exported!" % path_arg)
