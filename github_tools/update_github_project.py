@@ -4,14 +4,15 @@
 
 import argparse
 import os
-from .update_git import *
+from github_tools.update_git import quick_push_git
 
 def update_github_project(project_folder):
     save_pwd = os.getcwd()
     os.chdir(project_folder)
     print(os.getcwd())
 
-    update_git()
+
+    quick_push_git()
 
     os.chdir(save_pwd)
     print(os.getcwd())
