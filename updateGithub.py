@@ -12,7 +12,7 @@ from github_tools.export_git_project_and_permalink import *
 from github_tools.update_github_project import *
 
 config_file = "config.yaml"
-
+print(os.path.abspath(config_file))
 with open(config_file, "r+") as rf:
     config_yaml = yaml.load(rf)
 

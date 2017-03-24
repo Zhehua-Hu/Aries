@@ -7,7 +7,7 @@ import os
 import datetime
 
 
-def update_git(comment=(datetime.datetime.now().__str__())):
+def quick_push_git(comment=(datetime.datetime.now().__str__())):
     command = "git add *"
     os.system(command)
     print("------> %s" % command)
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.m:
-        update_git(args.m)
+        quick_push_git(args.m)
     else:
-        update_git(datetime.datetime.now().__str__())
+        quick_push_git(datetime.datetime.now().__str__())
 
