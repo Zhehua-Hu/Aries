@@ -39,10 +39,13 @@ if __name__ == "__main__":
 
     export_git_project_and_permalink(github_path)
 
+    print("[%d] projects was updated.")
+    tmp_idx = 1
     for path in github_projects:
         update_github_project(path)
-
-
+        print("Update-----> %s" % path)
+        tmp_idx += 1
+    print("[%d] projects was updated.")
 
 
 
