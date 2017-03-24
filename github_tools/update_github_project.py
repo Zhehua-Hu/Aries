@@ -4,15 +4,17 @@
 
 import argparse
 import os
-
-from .update_git import update_git
+from .update_git import *
 
 def update_github_project(project_folder):
-    print(project_folder)
     save_pwd = os.getcwd()
     os.chdir(project_folder)
+    print(os.getcwd())
+
     update_git()
+
     os.chdir(save_pwd)
+    print(os.getcwd())
 
 
 if __name__ == "__main__":
