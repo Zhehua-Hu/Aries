@@ -44,7 +44,8 @@
     ```
 # TODO
 
-updateGithub
+git log to last modified time
+http://stackoverflow.com/questions/4600445/git-log-output-to-xml-json-or-yaml
 
 命令注入
 

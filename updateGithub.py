@@ -11,9 +11,9 @@ import platform
 from github_tools.export_git_project_and_permalink import *
 from github_tools.update_github_project import *
 
-config_file = "config.yaml"
-print(os.path.abspath(config_file))
-with open(config_file, "r+") as rf:
+config_filename = "config.yaml"
+config_filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), config_filename)
+with open(config_filepath, "r+") as rf:
     config_yaml = yaml.load(rf)
 
     if "Windows" in platform.system():
@@ -39,13 +39,13 @@ if __name__ == "__main__":
 
     export_git_project_and_permalink(github_path)
 
-    print("Updating Start-----> ")
+    print("----->Updating Start")
     tmp_idx = 1
     for path in github_projects:
         update_github_project(path)
-        print("Update-----> %s" % path)
+        print("----->Update %s" % path)
         tmp_idx += 1
-    print("[%d] projects was updated." % tmp_idx)
+    print("----->[%d] projects was updated." % tmp_idx)
 
 
 
