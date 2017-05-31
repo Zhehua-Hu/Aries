@@ -1,4 +1,5 @@
 GithubProject:
+- {Cython-Cpp-Project: /home/zhehua/Github/Cython-Cpp-Project}
 - {Enchain: /home/zhehua/Github/Enchain}
 - {Config-Serilization-Tutorials: /home/zhehua/Github/Config-Serilization-Tutorials}
 - {mypripy: /home/zhehua/Github/mypripy}
@@ -10,6 +11,8 @@ GithubProject:
 - {MakeAPI-Tutorials: /home/zhehua/Github/MakeAPI-Tutorials}
 Permalinks:
 - {Project: Permalink}
+- {Cython-Cpp-Project: 'https://github.com/Zhehua-Hu/Cython-Cpp-Project.git'}
+- {Cython-Cpp-Project: 'git@github.com:Zhehua-Hu/Cython-Cpp-Project.git'}
 - {Enchain: 'https://github.com/Zhehua-Hu/Enchain.git'}
 - {Enchain: 'git@github.com:Zhehua-Hu/Enchain.git'}
 - {Config-Serilization-Tutorials: 'https://github.com/Zhehua-Hu/Config-Serilization-Tutorials.git'}
